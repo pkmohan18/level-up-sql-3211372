@@ -5,3 +5,19 @@
 -- Stevensen, Stephensen, Stevenson, Stephenson, Stuyvesant
 
 -- There are four people in the party. Today is June 14th.
+
+select c.CustomerID, c.FirstName, c.LastName, r.Date, r.PartySize
+from Reservations r
+JOIN
+Customers c
+ON c.CustomerID = r.CustomerID 
+where r.Date LIKE "20__-06-14%"
+AND
+c.LastName LIKE "St%";
+
+-- SELECT Customers.FirstName, Customers.LastName, Reservations.Date, Reservations.PartySize
+-- FROM Reservations
+-- JOIN Customers ON Customers.CustomerID = Reservations.CustomerID
+-- WHERE Customers.LastName LIKE 'St%'
+-- AND PartySize = 4
+-- ORDER BY Reservations.Date DESC;
